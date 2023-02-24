@@ -27,6 +27,7 @@ class Robot:
 
         self.odometry, self.lidar_data, self.scans = self.parse_and_format_log('examp5.txt')
 
+    # SUPPORT FUNCTIONS
     def draw_tile(self, tile_pos, color):
         rect = pygame.Rect(tile_pos[0] * self.tilesize, tile_pos[1] * self.tilesize, self.tilesize, self.tilesize)
         pygame.draw.rect(self.screen, color, rect)
@@ -151,6 +152,7 @@ class Robot:
         for i in range(len(self.obstacles)):
             self.draw_tile(self.obstacles[i], '#000080')
 
+    # CONTROLS FUNCTIONS
     def check_inputs(self):
         keys = pygame.key.get_pressed()
 
